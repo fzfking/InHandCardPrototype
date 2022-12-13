@@ -1,0 +1,20 @@
+[
+  {
+    "Name": "Elephant",
+    "Description": "A large animal that can crush most enemies,\nbut is very afraid of mice.",
+    "Stats": {
+      "Health": 9,
+      "Strength": 5,
+      "Mana": 0
+    }
+  },
+  {
+    "Name": "Boomalope",
+    "Description": "Can make booom!",
+    "Stats": {
+      "Health": 5,
+      "Strength": 2,
+      "Mana": 0
+    }
+  }
+]
