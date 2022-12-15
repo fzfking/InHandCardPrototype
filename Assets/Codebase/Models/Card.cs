@@ -2,17 +2,20 @@
 using System.Collections.Generic;
 using Codebase.DataTransferObjects;
 using Codebase.Helpers;
+using Codebase.Models.Interfaces;
 using UnityEngine;
 
 namespace Codebase.Models
 {
-    public class Card
+    public class Card: IReadonlyCard
     {
         public event Action<StatType, int> AnyFieldChanged;
+        public event Action<Card> Disposed;
         public string Name => _name;
         public string Description => _description;
 
-        private readonly Sprite _icon;
+        private readonly CardSetup _setup;
+        public Sprite Icon { get; }
         private Dictionary<StatType, int> _stats;
 
         private readonly string _name;
@@ -22,8 +25,9 @@ namespace Codebase.Models
         {
             _name = setup.Name;
             _description = setup.Description;
-            _stats = setup.Stats;
-            _icon = icon;
+            _stats = new Dictionary<StatType, int>(setup.Stats);
+            _setup = setup;
+            Icon = icon;
         }
 
         public int GetStat(StatType statType) => _stats[statType];
@@ -32,7 +36,28 @@ namespace Codebase.Models
         {
             var previousValue = _stats[statType];
             _stats[statType] += offset;
+            if (_stats[statType] < 0)
+            {
+                _stats[statType] = 0;
+            }
+
+            if (previousValue == _stats[statType])
+            {
+                return;
+            }
             AnyFieldChanged?.Invoke(statType, previousValue);
+        }
+
+        public Card CreateCopy()
+        {
+            return new Card(_setup, Icon);
+        }
+
+        public void Dispose()
+        {
+            Disposed?.Invoke(this);
+            AnyFieldChanged = null;
+            Disposed = null;
         }
     }
 }

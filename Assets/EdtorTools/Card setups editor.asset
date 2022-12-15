@@ -34,3 +34,93 @@ MonoBehaviour:
       Value: 2
     - StatType: 2
       Value: 0
+  - Name: Rat
+    Description: Likes cheeeeeeeeeese.
+    Stats:
+    - StatType: 0
+      Value: 2
+    - StatType: 1
+      Value: 1
+    - StatType: 2
+      Value: 0
+  - Name: Human
+    Description: Insane power.
+    Stats:
+    - StatType: 0
+      Value: 3
+    - StatType: 1
+      Value: 10
+    - StatType: 2
+      Value: 3
+  - Name: Driada
+    Description: Wooden and powerful.
+    Stats:
+    - StatType: 0
+      Value: 3
+    - StatType: 1
+      Value: 2
+    - StatType: 2
+      Value: 6
+  - Name: Dinosaur
+    Description: Ancient and actually dead.
+    Stats:
+    - StatType: 0
+      Value: 10
+    - StatType: 1
+      Value: 10
+    - StatType: 2
+      Value: 0
+  - Name: Spider
+    Description: Small and creepy.
+    Stats:
+    - StatType: 0
+      Value: 1
+    - StatType: 1
+      Value: 0
+    - StatType: 2
+      Value: 0
+  - Name: Titan
+    Description: Eren Jagger.
+    Stats:
+    - StatType: 0
+      Value: 10
+    - StatType: 1
+      Value: 10
+    - StatType: 2
+      Value: 10
+  - Name: Cartman Eric
+    Description: Im not fat, i have wide bone
+    Stats:
+    - StatType: 0
+      Value: 5
+    - StatType: 1
+      Value: 3
+    - StatType: 2
+      Value: 1
+  - Name: Kenny McCormick
+    Description: Mysterion. But nobody knows that.
+    Stats:
+    - StatType: 0
+      Value: 5
+    - StatType: 1
+      Value: 0
+    - StatType: 2
+      Value: 10
+  - Name: Tyler Durden
+    Description: Self-destruction - the path to self-development
+    Stats:
+    - StatType: 0
+      Value: 1
+    - StatType: 1
+      Value: 10
+    - StatType: 2
+      Value: 0
+  - Name: Dexter Morgan
+    Description: Someone's American dream is my worst nightmare
+    Stats:
+    - StatType: 0
+      Value: 5
+    - StatType: 1
+      Value: 4
+    - StatType: 2
+      Value: 0

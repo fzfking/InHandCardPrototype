@@ -1,3 +1,4 @@
+using System;
 using Codebase.Infrastructure.Interfaces;
 using Codebase.Infrastructure.States;
 using UnityEngine;
@@ -12,7 +13,12 @@ namespace Codebase.Infrastructure
         {
             _serviceContainer = new ServiceContainer();
             _stateMachine = new GameStateMachine(_serviceContainer, this);
-            _stateMachine.Enter<FactoriesInitState>();
+            _stateMachine.Enter<LoadersInitState>();
+        }
+
+        private void OnDestroy()
+        {
+            _stateMachine.Exit();
         }
     }
 }

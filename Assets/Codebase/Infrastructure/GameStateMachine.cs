@@ -16,7 +16,9 @@ namespace Codebase.Infrastructure
             {
                 [typeof(FactoriesInitState)] = new FactoriesInitState(this, serviceContainer, coroutineRunner),
                 [typeof(SetupLoadState)] = new SetupLoadState(this, serviceContainer),
-                [typeof(GameLoopState)] = new GameLoopState(this, serviceContainer)
+                [typeof(GameLoopState)] = new GameLoopState(this, serviceContainer),
+                [typeof(LoadersInitState)] = new LoadersInitState(this, serviceContainer),
+                [typeof(ExitState)] = new ExitState()
             };
         }
 

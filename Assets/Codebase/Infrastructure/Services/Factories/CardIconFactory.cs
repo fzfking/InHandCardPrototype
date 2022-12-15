@@ -16,7 +16,7 @@ namespace Codebase.Infrastructure.Services.Factories
         private const int Height = 300;
         private const int Width = 300;
         private static readonly string ImageGeneratorUri = $"https://picsum.photos/{Height}/{Width}";
-        private const int DefaultPoolSize = 5;
+        private const int DefaultPoolSize = 25;
         private readonly ICoroutineRunner _coroutineRunner;
         private readonly List<Sprite> _spritesPool;
         private readonly List<Texture2D> _textures;

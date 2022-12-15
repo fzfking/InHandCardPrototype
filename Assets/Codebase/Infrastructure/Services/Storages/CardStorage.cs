@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
+using Codebase.Helpers;
 using Codebase.Infrastructure.Interfaces;
 using Codebase.Models;
+using UnityEngine;
 
 namespace Codebase.Infrastructure.Services.Storages
 {
@@ -18,6 +20,19 @@ namespace Codebase.Infrastructure.Services.Storages
             _cards.Add(card);
         }
 
-        public Card[] GetCards() => _cards.ToArray();
+        public Card[] GetAllCards() => _cards.ToArray();
+
+        public Card[] GetRandomCardDeck(int size) => GenerateRandomDeck(size);
+
+        private Card[] GenerateRandomDeck(int size)
+        {
+            List<Card> cards = new List<Card>(size);
+            for (int i = 0; i < size; i++)
+            {
+                cards.Add(_cards[Random.Range(0, _cards.Count)].CreateCopy());
+            }
+
+            return cards.ToArray();
+        }
     }
 }

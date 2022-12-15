@@ -16,5 +16,95 @@
       "Strength": 2,
       "Mana": 0
     }
+  },
+  {
+    "Name": "Rat",
+    "Description": "Likes cheeeeeeeeeese.",
+    "Stats": {
+      "Health": 2,
+      "Strength": 1,
+      "Mana": 0
+    }
+  },
+  {
+    "Name": "Human",
+    "Description": "Insane power.",
+    "Stats": {
+      "Health": 3,
+      "Strength": 10,
+      "Mana": 3
+    }
+  },
+  {
+    "Name": "Driada",
+    "Description": "Wooden and powerful.",
+    "Stats": {
+      "Health": 3,
+      "Strength": 2,
+      "Mana": 6
+    }
+  },
+  {
+    "Name": "Dinosaur",
+    "Description": "Ancient and actually dead.",
+    "Stats": {
+      "Health": 10,
+      "Strength": 10,
+      "Mana": 0
+    }
+  },
+  {
+    "Name": "Spider",
+    "Description": "Small and creepy.",
+    "Stats": {
+      "Health": 1,
+      "Strength": 0,
+      "Mana": 0
+    }
+  },
+  {
+    "Name": "Titan",
+    "Description": "Eren Jagger.",
+    "Stats": {
+      "Health": 10,
+      "Strength": 10,
+      "Mana": 10
+    }
+  },
+  {
+    "Name": "Cartman Eric",
+    "Description": "Im not fat, i have wide bone",
+    "Stats": {
+      "Health": 5,
+      "Strength": 3,
+      "Mana": 1
+    }
+  },
+  {
+    "Name": "Kenny McCormick",
+    "Description": "Mysterion. But nobody knows that.",
+    "Stats": {
+      "Health": 5,
+      "Strength": 0,
+      "Mana": 10
+    }
+  },
+  {
+    "Name": "Tyler Durden",
+    "Description": "Self-destruction - the path to self-development",
+    "Stats": {
+      "Health": 1,
+      "Strength": 10,
+      "Mana": 0
+    }
+  },
+  {
+    "Name": "Dexter Morgan",
+    "Description": "Someone's American dream is my worst nightmare",
+    "Stats": {
+      "Health": 5,
+      "Strength": 4,
+      "Mana": 0
+    }
   }
 ]
