@@ -73,7 +73,6 @@ namespace Codebase.Presenters
             _card.AnyFieldChanged -= AnimateCount;
         }
 
-
         public void OnPointerDown(PointerEventData eventData)
         {
             if (_followingRoutine != null || _isTweening || IsAnimating)
