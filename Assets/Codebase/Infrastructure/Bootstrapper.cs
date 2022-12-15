@@ -1,4 +1,3 @@
-using System;
 using Codebase.Infrastructure.Interfaces;
 using Codebase.Infrastructure.States;
 using UnityEngine;

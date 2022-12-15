@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using Codebase.DataTransferObjects;
-using Codebase.Helpers;
+﻿using Codebase.DataTransferObjects;
 using Codebase.Infrastructure.Interfaces;
 using Codebase.Models;
 

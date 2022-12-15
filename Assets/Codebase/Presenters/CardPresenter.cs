@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using Codebase.Helpers;
-using Codebase.Models;
 using Codebase.Models.Interfaces;
 using DG.Tweening;
 using TMPro;
@@ -74,20 +73,6 @@ namespace Codebase.Presenters
             _card.AnyFieldChanged -= AnimateCount;
         }
 
-        public void Translate(Vector3 position)
-        {
-            _isTweening = true;
-            transform.DOMove(position, Vector2.Distance(transform.position, position) / 5).OnComplete(() =>
-            {
-                _savedPosition = transform.position;
-                _isTweening = false;
-            });
-        }
-
-        public void Rotate(Vector3 rotation)
-        {
-            transform.DORotate(rotation, Constants.Durations.RotateDuration);
-        }
 
         public void OnPointerDown(PointerEventData eventData)
         {
@@ -111,6 +96,34 @@ namespace Codebase.Presenters
 
             Translate(_savedPosition);
             Rotate(_savedRotation);
+        }
+
+        public void SetNewSavedPosition(Vector3 position) => _savedPosition = position;
+        public void SetNewSavedRotation(Vector3 rotation) => _savedRotation = rotation;
+
+        public void ReturnToSavedPosition()
+        {
+            Translate(_savedPosition);
+        }
+
+        private void Translate(Vector3 position)
+        {
+            _isTweening = true;
+            transform.DOMove(position, Vector2.Distance(transform.position, position) / 5).OnComplete(() =>
+            {
+                _savedPosition = transform.position;
+                _isTweening = false;
+            });
+        }
+
+        public void ReturnToSavedRotation()
+        {
+            Rotate(_savedRotation);
+        }
+
+        private void Rotate(Vector3 rotation)
+        {
+            transform.DORotate(rotation, Constants.Durations.RotateDuration);
         }
 
         private void AnimateCount(StatType statType, int previousValue)
@@ -154,11 +167,8 @@ namespace Codebase.Presenters
             IsAnimating = false;
         }
 
-        public void SetNewSavedPosition(Vector3 position) => _savedPosition = position;
-        public void SetNewSavedRotation(Vector3 rotation) => _savedRotation = rotation;
-
-        public void MoveUp() => Move(true);
-        public void MoveDown(Action onComplete = null) => Move(false, onComplete);
+        private void MoveUp() => Move(true);
+        private void MoveDown(Action onComplete = null) => Move(false, onComplete);
 
         private void Move(bool toUpper, Action onComplete = null)
         {
@@ -180,16 +190,6 @@ namespace Codebase.Presenters
         private Vector3 UpPositionOffset()
         {
             return transform.up * (transform.localScale.y * 1.1f);
-        }
-
-        public void ReturnToSavedPosition()
-        {
-            Translate(_savedPosition);
-        }
-
-        public void ReturnToSavedRotation()
-        {
-            Rotate(_savedRotation);
         }
 
         private IEnumerator FollowMouse()

@@ -1,5 +1,4 @@
-﻿using Codebase.Helpers;
-using Codebase.Infrastructure.Interfaces;
+﻿using Codebase.Infrastructure.Interfaces;
 using Codebase.Presenters;
 using UnityEngine;
 
@@ -7,22 +6,26 @@ namespace Codebase.Infrastructure.Services.Loaders
 {
     public class PrefabsLoader : IService
     {
-        private static string PrefabsPath => "Prefabs/";
-        private static string TablePath => $"{PrefabsPath}Table";
-        private static string RandomOffsetButtonPath => $"{PrefabsPath}RandomOffsetButton";
-        private static string CanvasPath => $"{PrefabsPath}Canvas";
-        private static string LoadingCurtainPath => $"{PrefabsPath}LoadingCurtain";
-        private static string CardPresenterPath => $"{PrefabsPath}Card";
-        private static string CardsContainerPath => $"{PrefabsPath}CardsContainer";
-        public CardPresenter LoadCardPresenter() => GenericResourcesLoader.Load<CardPresenter>(CardPresenterPath);
+        private static class Paths
+        {
+            private static string PrefabsPath => "Prefabs/";
+            public static string TablePath => $"{PrefabsPath}Table";
+            public static string RandomOffsetButtonPath => $"{PrefabsPath}RandomOffsetButton";
+            public static string CanvasPath => $"{PrefabsPath}Canvas";
+            public static string LoadingCurtainPath => $"{PrefabsPath}LoadingCurtain";
+            public static string CardPresenterPath => $"{PrefabsPath}Card";
+            public static string CardsContainerPath => $"{PrefabsPath}CardsContainer";
+        }
 
-        public SortedCardsContainer LoadTablePresenter() => GenericResourcesLoader.Load<SortedCardsContainer>(TablePath);
-        public SortedCardsContainer LoadCardsContainer() => GenericResourcesLoader.Load<SortedCardsContainer>(CardsContainerPath);
+        public CardPresenter LoadCardPresenter() => GenericResourcesLoader.Load<CardPresenter>(Paths.CardPresenterPath);
+
+        public SortedCardsContainer LoadTablePresenter() => GenericResourcesLoader.Load<SortedCardsContainer>(Paths.TablePath);
+        public SortedCardsContainer LoadCardsContainer() => GenericResourcesLoader.Load<SortedCardsContainer>(Paths.CardsContainerPath);
 
         public RandomOffsetButton LoadRandomOffsetButton() =>
-            GenericResourcesLoader.Load<RandomOffsetButton>(RandomOffsetButtonPath);
+            GenericResourcesLoader.Load<RandomOffsetButton>(Paths.RandomOffsetButtonPath);
 
-        public Canvas LoadCanvas() => GenericResourcesLoader.Load<Canvas>(CanvasPath);
-        public LoadingCurtain LoadLoadingCurtain() => GenericResourcesLoader.Load<LoadingCurtain>(LoadingCurtainPath);
+        public Canvas LoadCanvas() => GenericResourcesLoader.Load<Canvas>(Paths.CanvasPath);
+        public LoadingCurtain LoadLoadingCurtain() => GenericResourcesLoader.Load<LoadingCurtain>(Paths.LoadingCurtainPath);
     }
 }

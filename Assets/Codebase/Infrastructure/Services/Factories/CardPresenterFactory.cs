@@ -9,13 +9,13 @@ namespace Codebase.Infrastructure.Services.Factories
 {
     public class CardPresenterFactory: IService
     {
-        private readonly CardPresenter CardPresenterPrefab;
-        private List<CardPresenter> _cardPresentersPool;
+        private readonly CardPresenter _cardPresenterPrefab;
+        private readonly List<CardPresenter> _cardPresentersPool;
         private const int DefaultPoolSize = 5;
 
         public CardPresenterFactory(PrefabsLoader prefabsLoader)
         {
-            CardPresenterPrefab = prefabsLoader.LoadCardPresenter();
+            _cardPresenterPrefab = prefabsLoader.LoadCardPresenter();
             _cardPresentersPool = new List<CardPresenter>(DefaultPoolSize);
         }
         public CardPresenter GetFreeCardPresenter()
@@ -34,7 +34,7 @@ namespace Codebase.Infrastructure.Services.Factories
         {
             for (int i = 0; i < DefaultPoolSize; i++)
             {
-                var cardPresenter = Object.Instantiate(CardPresenterPrefab, null);
+                var cardPresenter = Object.Instantiate(_cardPresenterPrefab, null);
                 cardPresenter.transform.position = Vector3.zero;
                 cardPresenter.gameObject.SetActive(false);
                 _cardPresentersPool.Add(cardPresenter);

@@ -2,17 +2,12 @@
 using Codebase.DataTransferObjects;
 using Codebase.Infrastructure.Services.Loaders;
 using Newtonsoft.Json;
-using UnityEngine;
 
 namespace Codebase.Infrastructure.Services.Saver
 {
     public class CardSetupsSaver
     {
         private static string CardSetupsPath => CardSetupsLoader.CardSetupsPath;
-
-        public CardSetupsSaver()
-        {
-        }
 
         public void SaveSetups(CardSetup[] setups)
         {
